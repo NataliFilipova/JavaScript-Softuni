@@ -1,30 +1,18 @@
 function charactersInRange(a,b){
-    let asciiCodea = letter.charCodeAt(a)
-    let asciiCodeb = letter.charCodeAt(b)
+    let asciiCodea = a.charCodeAt(0);
+    let asciiCodeb = b.charCodeAt(0);
 
-    if (b >  a){
-        let c = a;
-        a = b;
-        b = c;
+    if (asciiCodeb <   asciiCodea){
+        let c =  asciiCodea;
+        asciiCodea = asciiCodeb;
+        asciiCodeb = c;
     }
 
-    for(let i = a; i <= b; i++){
-        console.log(ascicode[i]);
+    let array = [];
+    for (let index = asciiCodea + 1; index < asciiCodeb; index++) {
+        array.push(String.fromCharCode(index));
     }
+    console.log(array.join(' '));
 }
-function PascalCaseSplitter(text) {
-    let result = '';
-    for (const letter of text) {
-        let asciiCode = letter.charCodeAt(letter)
-        if (asciiCode >= 65 && asciiCode <= 90) {
-            if (result.length > 0) {
-                result += ', ';
-            }
-            result += letter;
-        }
-        else {
-            result += letter;
-        }
-    }
-    console.log(result);
-}
+
+charactersInRange('a','d');
