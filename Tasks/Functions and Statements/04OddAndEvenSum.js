@@ -2,14 +2,14 @@ function OddAndEvenSum(number){
     let numberAsString = number.toString();
     let oddSum = 0;
     let evenSum = 0;
-    numberAsString.array.forEach(element => {
-        if(Number(element)% 2 == 0){
-            evenSum += Number(element);
+   for(let i = 0; i <numberAsString.length; i++) {
+        if(Number(numberAsString[i])% 2 == 0){
+            evenSum += Number(numberAsString[i]);
         }
         else{
-            oddSum += Number(element);
+            oddSum += Number(numberAsString[i]);
         }
-    });
+    };
 
     console.log(`Odd sum = ${oddSum}, Even sum = ${evenSum}`);
 }
