@@ -8,11 +8,17 @@ function inventory(input){
 
     }
 
-    let sortedHerows = heroes.sort((heroA, heroB) => heroA.level - heroB.level);
+    let sortedHeroes = heroes.sort((heroA, heroB) => heroA.level - heroB.level);
 
     for(const {hero, level, items} of sortedHeroes){
-
+        console.log(`Hero: ${hero}`);
+        console.log(`level => ${level}`);
+        console.log(`items => ${items}`);
     }
         
 }
-
+inventory([
+    'Batman / 2 / Banana, Gun',
+    'Superman / 18 / Sword',
+    'Poppy / 28 / Sentinel, Antara'
+]);
