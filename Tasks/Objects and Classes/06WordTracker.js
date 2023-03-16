@@ -1,12 +1,23 @@
 function wordsTracker(input){
-    let words = [];
-    words = input[0].split(' ');
+    let words = input[0].split(' ');
     let text = input.splice(1);
     let obj = {};
 
     for(const word of words){
-        let foundwords = text.filter(x => x == word).length;
+        let foundwords = text.filter(x => x === word).length;
         obj[word] = foundwords;
+    }
+
+    let sortedWords = Object.entries(obj)
+    .sort((wordA,wordB) => {
+        let [nameA, countA] = wordA;
+        let [nameB, countB] = wordB;
+        
+        return countB-countA;
+    });
+
+    for(const [word, count] of sortedWords){
+        console.log(`${word} - ${count}`);
     }
 }
 
